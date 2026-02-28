@@ -1,0 +1,24 @@
+{
+  "name": "orders-outbox-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "orders-db",
+    "database.port": "5432",
+    "database.user": "admin",
+    "database.password": "admin123",
+    "database.dbname": "ordersdb",
+    "database.server.name": "orders-db-connector",
+    "topic.prefix": "orders-db-connector",
+    "table.include.list": "public.outbox",
+    "publication.name": "dbz_publication",
+    "plugin.name": "pgoutput",
+    "slot.name": "debezium_outbox_slot",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
+    "tombstones.on.delete": "false",
+    "snapshot.mode": "initial"
+  }
+}

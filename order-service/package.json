@@ -1,0 +1,20 @@
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "description": "Order Service with Outbox Pattern",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "uuid": "^9.0.0",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
